@@ -1,6 +1,7 @@
 {
 module Parser where
 import Data.Char
+import Arithmetic
 }
 
 %name arithmetic
@@ -31,16 +32,6 @@ Term
 {
 parseError :: [Token] -> a
 parseError _ = error "Parse error"
-
-data Term
-    = TermTrue
-    | TermFalse
-    | TermZero
-    | TermSucc Term
-    | TermPred Term
-    | TermNull Term
-    | TermCond Term Term Term
-    deriving Show
 
 data Token
     = TokenTrue
